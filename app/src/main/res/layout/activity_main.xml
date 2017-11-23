@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="manuel.appbaloncesto.MainActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+        <!--Team A-->
+        <LinearLayout
+            android:id="@+id/lTeamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/divider"
+            android:layout_marginRight="15dp">
+            <TextView
+                android:id="@+id/tvNameTeamA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Team A"
+                android:textSize="40dp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/ta_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="35sp"
+                android:textAlignment="center"
+                />
+            <Button
+                android:id="@+id/ta_3p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+3 Puntos"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                android:drawableLeft="@drawable/dribbble"
+                android:paddingLeft="15sp"/>
+
+            <Button
+                android:id="@+id/ta_2p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+2 Puntos"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                android:drawableLeft="@drawable/dribbble"
+                android:paddingLeft="15sp"/>
+
+            <Button
+                android:id="@+id/ta_1p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 Punto"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                android:drawableLeft="@drawable/dribbble"
+                android:paddingLeft="15sp"/>
+        </LinearLayout>
+        <!--End Team A-->
+
+        <!--Divider-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/divider"
+            android:layout_alignBottom="@+id/lTeamA">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"/>
+        </LinearLayout>
+        <!--End Divider-->
+
+        <!--Team B-->
+        <LinearLayout
+            android:id="@+id/lTeamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true"
+            android:layout_alignLeft="@+id/divider"
+            android:layout_marginLeft="15dp">
+            <TextView
+                android:id="@+id/tvNameTeamB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Team B"
+                android:textSize="40dp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/tb_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="35sp"
+                android:textAlignment="center"
+                />
+            <Button
+                android:id="@+id/tb_3p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+3 Puntos"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                android:drawableLeft="@drawable/dribbble"
+                android:paddingLeft="15sp"/>
+
+            <Button
+                android:id="@+id/tb_2p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+2 Puntos"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                android:drawableLeft="@drawable/dribbble"
+                android:paddingLeft="15sp"/>
+
+            <Button
+                android:id="@+id/tb_1p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+1 Punto"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                android:drawableLeft="@drawable/dribbble"
+                android:paddingLeft="15sp"/>
+        </LinearLayout>
+        <!--End Team B-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/btn_clearCounters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Limpiar"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"
+                android:textColor="#FAFAFA"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:layout_margin="5sp"
+                />
+            <Button
+                android:id="@+id/btnNames"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Nombres"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"/>
+            <Button
+                android:id="@+id/prueba3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Prueba3"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimary"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                android:layout_margin="5sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
