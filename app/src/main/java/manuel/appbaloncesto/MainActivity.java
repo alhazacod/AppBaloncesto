@@ -9,6 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     int ta = 0;
@@ -22,6 +29,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnNames;
 
     Toolbar toolbar;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference fteam1 = database.getReference("team1");
+    DatabaseReference fteam2 = database.getReference("team2");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +73,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnNames = (Button) findViewById(R.id.btnNames);
         btnNames.setOnClickListener(this);
+    }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        fteam1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String text = dataSnapshot.getValue(String.class);
+                ta_count.setText(text);
+                ta = Integer.parseInt(text);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        fteam2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String text = dataSnapshot.getValue(String.class);
+                tb_count.setText(text);
+                tb = Integer.parseInt(text);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -72,17 +114,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Team A
             case R.id.ta_3p:
                 ta+=3;
-                ta_count.setText(Integer.toString(ta));
+                //ta_count.setText(Integer.toString(ta));
                 Toast.makeText(this, "+3 al equipo A", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.ta_2p:
                 ta+=2;
-                ta_count.setText(Integer.toString(ta));
+                //ta_count.setText(Integer.toString(ta));
                 Toast.makeText(this, "+2 al equipo A", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.ta_1p:
                 ta+=1;
-                ta_count.setText(Integer.toString(ta));
+                //ta_count.setText(Integer.toString(ta));
                 Toast.makeText(this, "+1 al equipo A", Toast.LENGTH_SHORT).show();
                 break;
             //End Team A
@@ -90,17 +132,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //Team B
             case R.id.tb_3p:
                 tb+=3;
-                tb_count.setText(Integer.toString(tb));
+                //tb_count.setText(Integer.toString(tb));
                 Toast.makeText(this, "+3 al equipo B", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tb_2p:
                 tb+=2;
-                tb_count.setText(Integer.toString(tb));
+                //tb_count.setText(Integer.toString(tb));
                 Toast.makeText(this, "+2 al equipo B", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.tb_1p:
                 tb+=1;
-                tb_count.setText(Integer.toString(tb));
+                //tb_count.setText(Integer.toString(tb));
                 Toast.makeText(this, "+1 al equipo B", Toast.LENGTH_SHORT).show();
                 break;
             //End Team B
@@ -121,5 +163,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(load);
                 break;
         }
+        String team1 = Integer.toString(ta);
+        String team2 = Integer.toString(tb);
+        fteam1.setValue(team1);
+        fteam2.setValue(team2);
     }
 }

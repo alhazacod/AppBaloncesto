@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "703527374513",
+    "firebase_url": "https://appbaloncesto.firebaseio.com",
+    "project_id": "appbaloncesto",
+    "storage_bucket": "appbaloncesto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703527374513:android:5208c10c0d900ad4",
+        "android_client_info": {
+          "package_name": "manuel.appbaloncesto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703527374513-gu1lv5q5vc9qrcalnvtagkjmj2r5k6hd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIYAO5SAfDssd3sWGVIX9vLU11PjzX_8c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
